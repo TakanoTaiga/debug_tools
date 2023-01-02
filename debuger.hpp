@@ -22,11 +22,11 @@ namespace tieriv_taiga{
 #else
             file_path = "/home/taiga/Desktop/debug/" + funcName + "_milliosec.csv";
 #endif
-            start_time = std::chrono::system_clock::now();
+            start_time = std::chrono::high_resolution_clock::now();
         }
 
         void end(uint64_t counter = 0){
-            end_time = std::chrono::system_clock::now();
+            end_time = std::chrono::high_resolution_clock::now();
             auto dur = end_time - start_time;
 
             std::ofstream debug_csv_file;
