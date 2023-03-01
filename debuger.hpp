@@ -6,7 +6,7 @@
 #define MICROSEC true
 #define MILLISEC false
 
-#define TIME_UNIT MILLISEC
+#define TIME_UNIT MICROSEC
 
 namespace tieriv_taiga{
     class p_counter{
@@ -32,7 +32,7 @@ namespace tieriv_taiga{
             std::ofstream debug_csv_file;
             debug_csv_file.open(file_path , std::ios::app);
 #if TIME_UNIT
-            auto microsec = std::chrono::duration_cast<std::chrono::microseconds>(dur).count();
+            auto microsec = (double)(std::chrono::duration_cast<std::chrono::nanoseconds>(dur).count()) / 1000;
             std::cout << microsec << " micro sec" << std::endl;
             debug_csv_file << counter << "," << microsec << std::endl;
 #else
