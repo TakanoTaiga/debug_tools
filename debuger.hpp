@@ -12,6 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
+/*
+note: please copy and paste.
+
+auto trace = t4_taiga::p_counter("");
+trace.end_us();
+*/
+
+
 #ifndef DEBUG_TOOLS__DEBUGER_HPP_
 #define DEBUG_TOOLS__DEBUGER_HPP_
 
