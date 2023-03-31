@@ -61,6 +61,7 @@ namespace t4_taiga{
             debug_csv_file.open("/home/taiga/Desktop/debug/" + func_name + "_milisec.csv" , std::ios::app);
             auto millisec = (double)(std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count()) / 1000;
             std::cout << millisec << " milli sec" << std::endl;
+            debug_csv_file << millisec << std::endl;
         }
 
         template <typename T>
@@ -81,6 +82,7 @@ namespace t4_taiga{
             debug_csv_file.open("/home/taiga/Desktop/debug/" + func_name + "_microsec.csv" , std::ios::app);
             auto microsec = (double)(std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count()) / 1000;
             std::cout << microsec << " micro sec" << std::endl;
+            debug_csv_file << microsec << std::endl;
         }
     };
 }
